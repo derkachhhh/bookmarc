@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всі Новини</title>
+    <link rel="stylesheet" href="{% static 'news/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Усі новини</h1>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/news/">Новини</a>
+            <a href="/authors/">Автори</a>
+        </nav>
+    </header>
+    <ul>
+        {% for news in all_news %}
+            <li>
+                <a href="{% url 'news_detail' news.id %}">{{ news.title }}</a><br>
+                <strong>Автор:</strong> {{ news.author }}<br>
+                <strong>Дата:</strong> {{ news.published_date }}<br>
+                <p>{{ news.content|truncatewords:20 }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

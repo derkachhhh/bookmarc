@@ -1,0 +1,91 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f7ff; /* Змінений фон на м’який блакитний */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    margin-top: 20px;
+    text-align: center; /* Центрування заголовка */
+}
+
+/* Список новин */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+li a {
+    color: #35424a;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    color: #666666;
+}
+
+/* Центрування кнопки "Читати більше" */
+.button-container {
+    text-align: center; /* Центрування кнопки */
+    margin: 20px 0; /* Відступи зверху і знизу */
+}
+
+a.button {
+    display: inline-block; /* Важливо для центрування */
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background: #4a545e;
+}
+
+/* Стилі для авторів */
+.bio {
+    font-style: italic;
+    color: #777777;
+}

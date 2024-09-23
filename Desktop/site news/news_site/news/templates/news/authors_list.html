@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автори</title>
+    <link rel="stylesheet" href="{% static 'news/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Автори</h1>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/news/">Новини</a>
+            <a href="/authors/">Автори</a>
+        </nav>
+    </header>
+    <ul>
+        {% for author in authors %}
+            <li>
+                <a href="{% url 'author_news' author.id %}">{{ author.first_name }} {{ author.last_name }}</a><br>
+                <p class="bio">{{ author.bio }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

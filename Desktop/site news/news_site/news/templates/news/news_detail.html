@@ -1,0 +1,34 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ news.title }}</title>
+    <link rel="stylesheet" href="{% static 'news/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ news.title }}</h1>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/news/">Новини</a>
+            <a href="/authors/">Автори</a>
+        </nav>
+    </header>
+    <strong>Автор:</strong> {{ news.author }}<br>
+    <strong>Дата:</strong> {{ news.published_date }}<br>
+    <p>{{ news.content }}</p>
+    <a class="button" href="/news/">Повернутися до новин</a>
+</body>
+</html>
