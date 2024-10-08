@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підтвердження видалення</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Підтвердження видалення</h1>
+    <p>Ви впевнені, що хочете видалити цю закладку "{{ bookmark.title }}"?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="button delete-button">Так, видалити</button>
+    </form>
+
+    <a class="button" href="{% url 'bookmark-list' %}">Скасувати</a>
+</body>
+</html>

@@ -1,0 +1,102 @@
+/* Загальні налаштування */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Заголовки */
+h1 {
+    color: #5a5a5a;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Список закладок */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Картки закладок */
+li {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+li:hover {
+    transform: translateY(-3px);
+}
+
+/* Кнопки */
+button, a.button {
+    background-color: #a7c6ed;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+button:hover, a.button:hover {
+    background-color: #9bb5e6;
+}
+
+/* Червона кнопка для видалення */
+.delete-button {
+    background-color: #d9534f;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+
+button:hover, a.button:hover {
+    background-color: #9bb5e6;
+}
+
+/* Формуляр */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Поля формуляра */
+input[type="text"],
+input[type="url"],
+input[type="checkbox"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Заголовок для формуляра */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Підтвердження видалення */
+.confirmation-message {
+    color: #d9534f;
+    font-weight: bold;
+}

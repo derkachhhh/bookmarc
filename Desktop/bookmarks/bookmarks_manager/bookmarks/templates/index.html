@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmarks Manager</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Менеджер закладок</h1>
-    <div id="content">
-        <!-- Пізніше тут буде інтерфейс для закладок -->
-    </div>
+    <h1>Мої закладки</h1>
+    <a class="button" href="{% url 'add-bookmark' %}">Додати нову закладку</a>
+
+    <ul>
+        {% for bookmark in bookmarks %}
+            <li>
+                <strong>{{ bookmark.title }}</strong>
+                <a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a>
+                <br>
+                Категорія: {{ bookmark.category }}
+                {% if bookmark.favorite %}
+                    <span>⭐ Улюблена</span>
+                {% endif %}
+                <br>
+                <a class="button" href="{% url 'bookmark-detail' bookmark.pk %}">Переглянути деталі</a>
+                <a class="button" href="{% url 'edit-bookmark' bookmark.pk %}">Редагувати</a>
+                <form method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="button delete-button">Видалити</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>Немає доступних закладок.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

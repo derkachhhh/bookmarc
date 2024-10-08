@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі закладки</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{ bookmark.title }}</h1>
+    <p><strong>URL:</strong> <a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></p>
+    <p><strong>Категорія:</strong> {{ bookmark.category }}</p>
+    {% if bookmark.favorite %}
+        <p>Це одна з улюблених закладок! ⭐</p>
+    {% endif %}
+
+    <a class="button" href="{% url 'edit-bookmark' bookmark.pk %}">Редагувати</a>
+    <a class="button" href="{% url 'delete-bookmark' bookmark.pk %}">Видалити</a>
+    <a class="button" href="{% url 'bookmark-list' %}">Назад до списку закладок</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагувати закладку</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Редагувати закладку</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Назва:</label>
+        <input type="text" id="title" name="title" value="{{ bookmark.title }}" required>
+
+        <label for="url">URL:</label>
+        <input type="url" id="url" name="url" value="{{ bookmark.url }}" required>
+
+        <label for="category">Категорія:</label>
+        <input type="text" id="category" name="category" value="{{ bookmark.category }}">
+
+        <label for="favorite">Улюблена:</label>
+        <input type="checkbox" id="favorite" name="favorite" {% if bookmark.favorite %}checked{% endif %}>
+
+        <button type="submit" class="button">Зберегти зміни</button>
+    </form>
+    <a class="button" href="{% url 'bookmark-list' %}">Назад до списку закладок</a>
+</body>
+</html>
