@@ -7,7 +7,7 @@ Bookmarks Manager — це простий веб-додаток для упра�
 
 ### 1. Клонування репозиторію
 ```bash
-git clone <https://github.com/derkachhhh/Bookmarks.git>
+git clone <https://github.com/derkachhhh/bookmarc.git>
 cd bookmarks_manager
 ```
 2. Install dependencies
