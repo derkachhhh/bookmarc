@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати закладку</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Додати нову закладку</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Назва:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="url">URL:</label>
+        <input type="url" id="url" name="url" required>
+
+        <label for="category">Категорія:</label>
+        <input type="text" id="category" name="category">
+
+        <label for="favorite">Улюблена:</label>
+        <input type="checkbox" id="favorite" name="favorite">
+
+        <button type="submit" class="button">Додати закладку</button>
+    </form>
+    <a class="button" href="{% url 'bookmark-list' %}">Назад до списку закладок</a>
+</body>
+</html>
